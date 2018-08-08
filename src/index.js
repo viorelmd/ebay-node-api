@@ -59,6 +59,7 @@ Ebay.prototype = {
         this.options.name = categoryID ? categoryID : -1;
         this.options.operationName = "GetCategoryInfo";
         this.options.param = "CategoryID";
+        this.options.includeSelector = this.options.details ? "ChildCategories" : null;
         let url = urlObject.buildShoppingUrl(this.options);
         console.log(url);
         return getRequest(url).then((data) => {
